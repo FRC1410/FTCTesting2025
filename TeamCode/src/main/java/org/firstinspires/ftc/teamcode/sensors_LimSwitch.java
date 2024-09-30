@@ -33,9 +33,7 @@ public class sensors_LimSwitch extends OpMode {
         // Read the state of the limit switch
         boolean isPressed = limitSwitch.getState(); /* (True when pressed, false when not) */
         //Error check for the LED
-        if (blinkinLedDriver != null) {
-            //Error check for the switch
-            if (limitSwitch != null){
+        if (blinkinLedDriver != null && limitSwitch != null) {
                 if (isPressed) {
                     // If activated, turn green
                     pattern = RevBlinkinLedDriver.BlinkinPattern.GREEN;
@@ -45,13 +43,10 @@ public class sensors_LimSwitch extends OpMode {
                     pattern = RevBlinkinLedDriver.BlinkinPattern.RED;
                     blinkinLedDriver.setPattern(pattern);
                 }
-            }
-
-            else {
+        } else if (limitSwitch == null) {
                 telemetry.addData("Limit Switch Broken, ", limitSwitch);
                 telemetry.update();
-            }
-        } else {
+        } else if (blinkinLedDriver == null) {
             telemetry.addData("LED Broken, ", blinkinLedDriver);
             telemetry.update();
         }
