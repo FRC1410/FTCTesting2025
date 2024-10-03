@@ -38,12 +38,14 @@ public class sensors_LimSwitch extends OpMode {
                     // If activated, turn green
                     pattern = RevBlinkinLedDriver.BlinkinPattern.GREEN;
                     blinkinLedDriver.setPattern(pattern);
-                    System.out.println("Light GREEN");
+                    telemetry.addData("Light GREEN", null);
+                    telemetry.update();
                 } else {
                     // If not activated, turn red
                     pattern = RevBlinkinLedDriver.BlinkinPattern.RED;
                     blinkinLedDriver.setPattern(pattern);
-                    System.out.println("Light RED");
+                    telemetry.addData("Light RED", null);
+                    telemetry.update();
                 }
         } else if (limitSwitch == null) {
                 telemetry.addData("Limit Switch Broken, ", limitSwitch);
