@@ -2,9 +2,11 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 
-@com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "sensor_LimSwitch", group = "Sensor")
+
+@TeleOp
 public class sensors_LimSwitch extends OpMode {
 
     // Create LED object
